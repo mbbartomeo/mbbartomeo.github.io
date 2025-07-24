@@ -38,6 +38,7 @@
 
 		<!-- Header -->
 		<header id="header">
+			
    			<div class="inner" style="text-align: center">
         		<a href="#" class="image avatar"><img src="images/avatar.jpg" alt=""/></a>
         		<h1 style="color: #8c2c44"><strong>MICAELA BARTOMEO</strong></h1>  <!-- Atención -->
@@ -52,7 +53,7 @@
 
 				<!-- One -->
 					<section id="one">
-						<header class="major" data-aos="fade-up">
+						<header class="major" data-aos="fade-up" data-aos-once="true">
 							  <h2>Hola, soy Micaela 👩🏻‍🚀</h2>
 							</header>
 							
@@ -535,18 +536,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<!-- AOS Animation JS -->
 			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 			<script>
-			  window.addEventListener('load', function () {
-	    	 	  document.body.classList.remove('is-preload');
 			  AOS.init({
-			    duration: 1000,      // Duración de la animación en milisegundos
-			    offset: 80,          // Cuándo dispararla (px desde el borde)
-			    once: false,         // Si se debe volver a animar al hacer scroll
-			    mirror: true         // Permite volver a animar al scrollear hacia arriba
+			    once: true, // Opcional: solo anima una vez
+			    duration: 800, // Opcional: duración en milisegundos
+			    offset: 100 // Opcional: distancia desde el fondo para disparar
 			  });
 			</script>
+</body>
+</html>
+
 
 	</body>
 </html>
