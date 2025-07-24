@@ -14,12 +14,12 @@
 	
 	  <!-- Estilos principales del template -->
 	  <link rel="stylesheet" href="assets/css/main.css" />
-
-	  <!-- AOS -->
+	  <!-- AOS Animation CSS -->
+	  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 	  <style>
 	    [data-aos] {
-	      opacity: 0;
-	      transform: translateY(40px);
+	      opacity: 0 !important;
+	      transform: translateY(40px) !important;
 	      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 	    }
 	
@@ -28,10 +28,6 @@
 	      transform: translateY(0px) !important;
 	    }
 	  </style>
-	
-	  <!-- AOS Animation CSS -->
-	  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-	
 	</head>
 
 	<body class="is-preload">
@@ -538,10 +534,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 			<script>
-			  AOS.init({
-			    once: true, // Opcional: solo anima una vez
-			    duration: 800, // Opcional: duración en milisegundos
-			    offset: 100 // Opcional: distancia desde el fondo para disparar
+			  window.addEventListener('load', function () {
+			    AOS.init({
+			      once: true,
+			      duration: 1000,
+			      offset: 120
+			    });
 			  });
 			</script>
 </body>
