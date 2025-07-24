@@ -16,6 +16,19 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		  [data-aos] {
+		    opacity: 0 !important;
+		    transition: all 0.8s ease !important;
+		    transform: translateY(40px) !important;
+		  }
+		
+		  [data-aos].aos-animate {
+		    opacity: 1 !important;
+		    transform: translateY(0) !important;
+		  }
+		</style>
+
 	</head>
 	<body class="is-preload">
 
@@ -520,6 +533,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 			<!-- AOS Animation JS -->
 			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-			<script> AOS.init(); </script>
+			<script>
+			  AOS.init({
+			    duration: 1000,      // Duración de la animación en milisegundos
+			    offset: 80,          // Cuándo dispararla (px desde el borde)
+			    once: false,         // Si se debe volver a animar al hacer scroll
+			    mirror: true         // Permite volver a animar al scrollear hacia arriba
+			  });
+			</script>
+
 	</body>
 </html>
