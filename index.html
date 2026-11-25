@@ -75,6 +75,12 @@ h2{font:700 clamp(1.5rem,3.4vw,2.2rem)/1.15 var(--display);letter-spacing:-.02em
 .tags li{font-size:.82rem;padding:.12rem .65rem;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
 .card a.go{justify-self:start;color:var(--cyan);font-weight:600;text-underline-offset:4px}
 
+
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.cert{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;display:grid;gap:.3rem;align-content:start}
+.cert h3{font:600 1.02rem/1.35 var(--display);letter-spacing:-.01em}
+.cert p{color:var(--muted);font-size:.95rem;line-height:1.5}
+.cert a{color:var(--cyan);font-weight:600;font-size:.95rem;text-underline-offset:4px;margin-top:.3rem}
 .rumbo{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.8rem;max-width:760px}
 .rumbo p+p{margin-top:.8rem}
 footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.2rem 0 3rem;color:var(--muted);font-size:.95rem}
@@ -95,7 +101,7 @@ footer a{color:var(--ink)}
 <header>
   <nav class="wrap" aria-label="Principal">
     <b>Micaela Bartomeo</b>
-    <div><a href="#misiones">Misiones</a><a href="#rumbo">Rumbo</a><a href="#contacto">Contacto</a></div>
+    <div><a href="#misiones">Misiones</a><a href="#formacion">Formación</a><a href="#rumbo">Rumbo</a><a href="#contacto">Contacto</a></div>
   </nav>
 </header>
 
@@ -116,9 +122,10 @@ footer a{color:var(--ink)}
     </div>
   </div>
 
-  <svg class="sky" viewBox="0 0 420 420" role="img" aria-label="Constelación con mis herramientas: SQL, Python, Power BI, Excel, Looker Studio y Google Sheets">
+  <svg class="sky" viewBox="0 0 420 420" role="img" aria-label="Constelación con mis herramientas: SQL, Python, R, Power BI, Tableau, Excel, Looker Studio y Google Sheets">
     <path class="link" pathLength="1" d="M90 110 L250 70 L340 190 L190 235 L90 110"/>
     <path class="link" pathLength="1" d="M190 235 L85 335 M340 190 L300 350 M190 235 L300 350"/>
+    <path class="link" pathLength="1" d="M250 70 L170 150 L190 235 M340 190 L365 265"/>
     <g>
       <circle cx="90" cy="110" r="6"/><text x="104" y="106">SQL</text>
       <circle cx="250" cy="70" r="6"/><text x="264" y="66">Python</text>
@@ -126,6 +133,8 @@ footer a{color:var(--ink)}
       <circle cx="190" cy="235" r="6"/><text x="204" y="258">Excel</text>
       <circle cx="85" cy="335" r="6"/><text x="99" y="352">Looker Studio</text>
       <circle cx="300" cy="350" r="6"/><text x="314" y="372">Google Sheets</text>
+      <circle cx="170" cy="150" r="5"/><text x="184" y="146">R</text>
+      <circle cx="365" cy="265" r="5"/><text x="365" y="290" text-anchor="middle">Tableau</text>
     </g>
   </svg>
 </div>
@@ -173,6 +182,33 @@ footer a{color:var(--ink)}
         <ul class="tags"><li>Power BI</li><li>Google Sheets</li><li>ETL</li><li>Branding</li></ul>
         <a class="go" href="https://drive.google.com/file/d/1RH60jA-N6j5hJWoRO0QcwJTzCDZis9pm/view" target="_blank" rel="noopener">Ver informe en PDF</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="wrap">
+    <h2>Formación</h2>
+    <p class="sub">Cursos y certificaciones que respaldan mis bases en análisis de datos, Business Intelligence y Python.</p>
+    <div class="certs">
+      <div class="cert">
+        <h3>Google Data Analytics, certificado profesional</h3>
+        <p>Google · Coursera<br>Enero de 2025 · 8 cursos: hojas de cálculo, SQL, Tableau y R</p>
+        <a href="https://coursera.org/verify/professional-cert/P20EUAS4GMT1" target="_blank" rel="noopener">Verificar certificado</a>
+      </div>
+      <div class="cert">
+        <h3>Fundamentos de Data Analytics</h3>
+        <p>Guayerd e IBM SkillsBuild<br>Noviembre de 2024 · 255 horas</p>
+      </div>
+      <div class="cert">
+        <h3>Business Intelligence</h3>
+        <p>Talento Tech · Gobierno de la Ciudad de Buenos Aires<br>Julio de 2025 · 80 horas</p>
+      </div>
+      <div class="cert">
+        <h3>Python Essentials 1</h3>
+        <p>Cisco Networking Academy · Python Institute<br>Octubre de 2023</p>
+        <a href="https://www.credly.com/badges/d72fcd74-d84f-4d93-8ce6-63f7c1953bab/public_url" target="_blank" rel="noopener">Verificar insignia</a>
+      </div>
     </div>
   </div>
 </section>
