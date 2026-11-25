@@ -1,545 +1,198 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-	  <meta charset="UTF-8" />
-	  <title>Micaela Bartomeo, Analista de Datos</title>
-	
-	  <!-- Favicon -->
-	  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-	
-	  <!-- Estilos principales del template -->
-	  <link rel="stylesheet" href="assets/css/main.css" />
-	  <!-- AOS Animation CSS -->
-	  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-	  <style>
-	    [data-aos] {
-	      opacity: 0 !important;
-	      transform: translateY(40px) !important;
-	      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-	    }
-	
-	    [data-aos].aos-animate {
-	      opacity: 1 !important;
-	      transform: translateY(0px) !important;
-	    }
-	  </style>
-	</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micaela Bartomeo, astronauta de datos</title>
+<meta name="description" content="Portfolio de Micaela Bartomeo, analista de datos junior. Proyectos con SQL, Python, Power BI y Looker Studio.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --space:#070b1a; --panel:#0f1530; --line:#242c55; --ink:#e9ecfa; --muted:#9aa4cc;
+  --star:#ffd479; --cyan:#5ee6ff; --violet:#7b5cff;
+  --display:"Unbounded","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;background:var(--space)}
+body{
+  color:var(--ink);font:400 1.075rem/1.65 var(--body);-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(1px 1px at 20px 30px,#fff,transparent),
+    radial-gradient(1px 1px at 120px 80px,#ffffffaa,transparent),
+    radial-gradient(1.5px 1.5px at 70px 150px,var(--star),transparent),
+    radial-gradient(1px 1px at 170px 20px,#ffffff88,transparent),
+    radial-gradient(60rem 40rem at 85% -5%,#3a2a9a55,transparent),
+    radial-gradient(50rem 40rem at -10% 40%,#0b5a7a33,transparent),
+    var(--space);
+  background-size:200px 200px,200px 200px,200px 200px,200px 200px,auto,auto,auto;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
 
-	<body class="is-preload">
+header{position:sticky;top:0;z-index:5;background:#070b1acc;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0}
+nav b{font:600 .95rem var(--display)}
+nav div{display:flex;gap:1.4rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
 
-		<!-- Header -->
-		<header id="header">
-			
-   			<div class="inner" style="text-align: center">
-        		<a href="#" class="image avatar"><img src="images/avatar.jpg" alt=""/></a>
-        		<h1 style="color: #8c2c44"><strong>MICAELA BARTOMEO</strong></h1>  <!-- Atención -->
-      		  	<h3 style="color: rgb(229, 175, 190,0.8)">Analista de datos<br /> <!-- Atención -->
-        		</h3>
-   			 </div>
-		</header>
+.hero{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:2rem;align-items:center;padding:clamp(2.5rem,7vw,5.5rem) 0 3rem}
+.who{display:flex;align-items:center;gap:.9rem;color:var(--muted);margin-bottom:1.6rem}
+.who img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--star)}
+h1{font:700 clamp(2.1rem,5.6vw,3.9rem)/1.08 var(--display);letter-spacing:-.03em}
+.lead{margin:1.4rem 0 1rem;max-width:52ch;font-size:1.2rem}
+.tagline{color:var(--star);font-weight:500;margin-bottom:1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.75rem 1.35rem;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--cyan);color:var(--cyan);transition:transform .15s,background .15s}
+.btn.main{background:var(--star);border-color:var(--star);color:#1a1405}
+.btn:hover{transform:translateY(-2px)}
 
+/* constelación de herramientas */
+.sky{width:100%;height:auto}
+.sky .link{stroke:var(--cyan);stroke-width:1.2;opacity:.55;fill:none;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s .3s ease-out forwards}
+.sky circle{fill:var(--star);filter:drop-shadow(0 0 6px var(--star))}
+.sky text{fill:var(--ink);font:500 14px var(--body)}
+@keyframes draw{to{stroke-dashoffset:0}}
 
-<!-- Main -->
-			<div id="main">
+section{padding:3.2rem 0}
+h2{font:700 clamp(1.5rem,3.4vw,2.2rem)/1.15 var(--display);letter-spacing:-.02em;margin-bottom:.8rem}
+.sub{color:var(--muted);max-width:62ch;margin-bottom:2rem}
 
-				<!-- One -->
-					<section id="one">
-						<header class="major" data-aos="fade-up" data-aos-once="true">
-							  <h2>Hola, soy Micaela 👩🏻‍🚀</h2>
-							</header>
-							
-							<p data-aos="fade-up" data-aos-delay="100" style="text-align: justify; text-justify: inter-word;">
-							  
-							  <br><br>
-							  Me especializo en preparar, analizar y visualizar datos con herramientas como SQL, Excel, Power BI y Python. Me entusiasma explorar la 
-								información con curiosidad, buscando patrones y oportunidades que no siempre son evidentes a simple vista. 
-							  Mi objetivo es transformar esos hallazgos en historias claras que impulsen decisiones estratégicas.
-							</p>
+.missions{display:grid;gap:1.1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:14px;padding:1.5rem 1.6rem;display:grid;gap:.6rem}
+.card.soon{border-left-color:var(--star);border-style:dashed;border-left-style:solid}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem;color:var(--muted)}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.soon .status::before{background:var(--star);box-shadow:0 0 8px var(--star)}
+.card h3{font:600 1.25rem/1.3 var(--display);letter-spacing:-.015em}
+.card p{color:#c6cbe6;max-width:68ch}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:.3rem 0}
+.tags li{font-size:.82rem;padding:.12rem .65rem;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.card a.go{justify-self:start;color:var(--cyan);font-weight:600;text-underline-offset:4px}
 
- </p>
-						<a 
-   							<a href="assets/BartomeoMicaela_AnalistaBI_2026.pdf" target="_blank">
+.rumbo{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.8rem;max-width:760px}
+.rumbo p+p{margin-top:.8rem}
+footer{border-top:1px solid var(--line);margin-top:2rem;padding:2.2rem 0 3rem;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer a{color:var(--ink)}
 
-    								👩🏻‍💻 Descargar CV en PDF
-						</a>  
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .sky{max-width:420px;margin:0 auto}
+  nav div{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .sky .link{animation:none;stroke-dashoffset:0}.btn{transition:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Principal">
+    <b>Micaela Bartomeo</b>
+    <div><a href="#misiones">Misiones</a><a href="#rumbo">Rumbo</a><a href="#contacto">Contacto</a></div>
+  </nav>
+</header>
 
-					</section>
-
-
-
-
-
-
-
-<section id="portfolio">
-    <h2>PROYECTOS</h2>
-    <div class="portfolio-grid">
-
-		<!------------------------------------Articulo 4 de tu portafolio-------------------------------------------------------------------->
-       <article class="portfolio-item">
-            <div class="portfolio-thumbnail">
-                <a href="https://canva.link/rj7ej78lntsthp4" target="_blank">
-                    <img src="images/articulo4.jpg"
-                         alt="Detecciones satelitales de focos térmicos en Sudamérica" 
-                         class="thumbnail-image">
-                    <div class="overlay">
-                        <span class="view-text">Ver Proyecto</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-content">
-                <h3>🛰️ Detecciones satelitales de focos térmicos en Sudamérica</h3>
-                <div class="tech-tags">
-                    <span class="tag">Análisis descriptivo</span>
-                    <span class="tag">Power BI</span>
-                    <span class="tag">Google Sheets</span>
-					<span class="tag">Orientado: Reclutador</span>
-		    <span class="tag">ETL</span>
-		    <span class="tag">Slides</span>
-                </div>
-                <p>Presentación de proyecto en Power BI usando Canvas. El objetivo fue identificar patrones espaciales y temporales, analizar valores térmicos extremos y validar 
-					su contexto operativo a través del desempeño y nivel de confiabilidad de los satélites. El enfoque combinó variables físicas (ΔT y FRP), dimensión espacial (área de píxel) 
-					y análisis agregado por día, permitiendo pasar de la detección puntual a la validación contextual. Los ejemplos incluidos representan solo una de las posibles líneas de 
-					análisis; el modelo también puede aplicarse a otros enfoques exploratorios según la investigación planteada.</p>
-                <a href="https://canva.link/rj7ej78lntsthp4" 
-                   target="_blank" 
-                   class="button small">
-                   📋 Ver Presentación
-                </a>
-            </div>
-        </article> 
-	      
-
-<!------------------------------------Articulo 3 de tu portafolio-------------------------------------------------------------------->
-       <article class="portfolio-item">
-            <div class="portfolio-thumbnail">
-                <a href="https://lookerstudio.google.com/reporting/315532d8-2538-4a5b-80f5-9d38986ee7a6">
-                    <img src="images/articulo3.jpg"
-                         alt="Análisis de E-commerce en Looker Studio" 
-                         class="thumbnail-image">
-                    <div class="overlay">
-                        <span class="view-text">Ver Proyecto</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-content">
-                <h3>📊 Análisis de E-commerce: Ventas y Clientes</h3>
-                <div class="tech-tags">
-                    <span class="tag">Análisis estadístico</span>
-                    <span class="tag">Análisis descriptivo</span>
-                    <span class="tag">Looker Studio</span>
-                    <span class="tag">Google Sheets</span>
-		    <span class="tag">ETL</span>
-		    <span class="tag">Branding</span>
-                </div>
-                <p>Dashboard en Looker Studio con datos de e-commerce generados por IA. La información se presenta en formato Z, con dos páginas
-		para visualizar información de Ventas y Clientes. 
-		Los gráficos cuentan con su propia descripción para clarificar su utilidad, insights encontrados y recomendaciones sugeridas.</p>
-                <a href="https://lookerstudio.google.com/reporting/315532d8-2538-4a5b-80f5-9d38986ee7a6" 
-                   target="_blank" 
-                   class="button small">
-                   🔍 Ver Dashboard 
-                </a>
-            </div>
-        </article> 
-		
-<!------------------------------------Articulo 2 de tu portafolio-------------------------------------------------------------------->
-       <article class="portfolio-item">
-            <div class="portfolio-thumbnail">
-                <a href="https://drive.google.com/file/d/1RH60jA-N6j5hJWoRO0QcwJTzCDZis9pm/view" target="_blank">
-                    <img src="images/articulo2.jpg"
-                         alt="Análisis de ONG en Power BI" 
-                         class="thumbnail-image">
-                    <div class="overlay">
-                        <span class="view-text">Ver Proyecto</span>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-content">
-                <h3>📊 Análisis de ONG: Gastos y Donaciones</h3>
-                <div class="tech-tags">
-                    <span class="tag">Análisis descriptivo</span>
-                    <span class="tag">Power BI</span>
-                    <span class="tag">Google Sheets</span>
-		    <span class="tag">ETL</span>
-		    <span class="tag">Branding</span>
-                </div>
-                <p>Informe interactivo con datos de Fundación Potenciar Solidario, creado con Power BI. Analiza las transacciones de sus 
-			ingresos y gastos durante 2018-2024. Incluye portada, análisis de Donaciones y análisis de Proveedores. El objetivo fue 
-			mostrar la actividad y comportamiento de los donantes, evolución de gastos y concentración de inversiones hasta la fecha.</p>
-                <a href="https://drive.google.com/file/d/1RH60jA-N6j5hJWoRO0QcwJTzCDZis9pm/view" 
-                   target="_blank" 
-                   class="button small">
-                   📋 Ver PDF
-                </a>
-            </div>
-        </article> 
-<!-------------------------------------------------------------------------------------------------------------------------------->
-
+<main>
+<div class="wrap hero">
+  <div>
+    <div class="who">
+      <img src="images/avatar.jpg" alt="Foto de Micaela" onerror="this.style.display='none'">
+      <span>Analista de datos junior 🇦🇷 · Trabajo remoto</span>
     </div>
+    <h1>Hola, soy Micaela, astronauta de datos.</h1>
+    <p class="lead">Preparo, analizo y visualizo datos con SQL, Excel, Power BI y Python. Me mueve la curiosidad por los patrones que no se ven a simple vista.</p>
+    <p class="tagline">Transformando información en decisiones estelares.</p>
+    <div class="cta">
+      <a class="btn main" href="#misiones">Ver misiones</a>
+      <a class="btn" href="assets/BartomeoMicaela_AnalistaBI_2026.pdf">Descargar CV</a>
+      <a class="btn" href="mailto:micaelabelenbartomeo@gmail.com">Escribime</a>
+    </div>
+  </div>
+
+  <svg class="sky" viewBox="0 0 420 420" role="img" aria-label="Constelación con mis herramientas: SQL, Python, Power BI, Excel, Looker Studio y Google Sheets">
+    <path class="link" pathLength="1" d="M90 110 L250 70 L340 190 L190 235 L90 110"/>
+    <path class="link" pathLength="1" d="M190 235 L85 335 M340 190 L300 350 M190 235 L300 350"/>
+    <g>
+      <circle cx="90" cy="110" r="6"/><text x="104" y="106">SQL</text>
+      <circle cx="250" cy="70" r="6"/><text x="264" y="66">Python</text>
+      <circle cx="340" cy="190" r="6"/><text x="256" y="182">Power BI</text>
+      <circle cx="190" cy="235" r="6"/><text x="204" y="258">Excel</text>
+      <circle cx="85" cy="335" r="6"/><text x="99" y="352">Looker Studio</text>
+      <circle cx="300" cy="350" r="6"/><text x="314" y="372">Google Sheets</text>
+    </g>
+  </svg>
+</div>
+
+<section id="misiones">
+  <div class="wrap">
+    <h2>Misiones</h2>
+    <p class="sub">Mis primeras misiones fueron prácticas con herramientas de BI. Ahora estoy sumando proyectos con SQL y Python, que verás acá a medida que los complete.</p>
+
+    <div class="missions">
+      <article class="card soon">
+        <span class="status">En preparación</span>
+        <h3>Exoplanetas: ¿cómo cambió la forma de descubrirlos?</h3>
+        <p>Exploración con Python y pandas de los datos del NASA Exoplanet Archive. Quiero ver cómo evolucionaron los métodos de detección y qué tipos de planetas aparecen con cada uno.</p>
+        <ul class="tags"><li>Python</li><li>pandas</li><li>Visualización</li></ul>
+      </article>
+
+      <article class="card soon">
+        <span class="status">En preparación</span>
+        <h3>Lanzamientos espaciales con SQL</h3>
+        <p>Una base de datos en SQLite para responder preguntas concretas con JOINs, agrupaciones y funciones de ventana, como qué países lanzan más y cómo cambió su ritmo con los años.</p>
+        <ul class="tags"><li>SQL</li><li>SQLite</li><li>Análisis exploratorio</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="status">Misión de entrenamiento completada</span>
+        <h3>Detecciones satelitales de focos térmicos en Sudamérica</h3>
+        <p>Mi primera exploración con datos de satélites. Quise entender dónde y cuándo aparecen las detecciones y cuáles son más confiables según el satélite que las registra. Combiné la temperatura (ΔT), la potencia radiativa (FRP) y el área del píxel, y agregué todo por día para pasar de la detección puntual a su contexto.</p>
+        <ul class="tags"><li>Power BI</li><li>Google Sheets</li><li>ETL</li><li>Análisis descriptivo</li></ul>
+        <a class="go" href="https://canva.link/rj7ej78lntsthp4" target="_blank" rel="noopener">Ver presentación</a>
+      </article>
+
+      <article class="card">
+        <span class="status">Misión de entrenamiento completada</span>
+        <h3>Ventas y clientes de un e-commerce</h3>
+        <p>Práctica de diseño de dashboards con datos de e-commerce generados con IA. Armé dos páginas, una de ventas y otra de clientes, y sumé a cada gráfico una descripción con su utilidad, los hallazgos y las recomendaciones, para que el tablero se entienda sin explicaciones aparte.</p>
+        <ul class="tags"><li>Looker Studio</li><li>Google Sheets</li><li>ETL</li><li>Branding</li></ul>
+        <a class="go" href="https://lookerstudio.google.com/reporting/315532d8-2538-4a5b-80f5-9d38986ee7a6" target="_blank" rel="noopener">Ver dashboard interactivo</a>
+      </article>
+
+      <article class="card">
+        <span class="status">Misión de entrenamiento completada</span>
+        <h3>Gastos y donaciones de una ONG</h3>
+        <p>Informe interactivo con datos de Fundación Potenciar Solidario entre 2018 y 2024. Incluye portada, análisis de donaciones y análisis de proveedores, para ver cómo se comportan los donantes, cómo evolucionan los gastos y dónde se concentra la inversión.</p>
+        <ul class="tags"><li>Power BI</li><li>Google Sheets</li><li>ETL</li><li>Branding</li></ul>
+        <a class="go" href="https://drive.google.com/file/d/1RH60jA-N6j5hJWoRO0QcwJTzCDZis9pm/view" target="_blank" rel="noopener">Ver informe en PDF</a>
+      </article>
+    </div>
+  </div>
 </section>
 
-				<!-- Three -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
+<section id="rumbo">
+  <div class="wrap">
+    <h2>Rumbo actual</h2>
+    <div class="rumbo">
+      <p>Sigo formándome en ciencia de datos y estoy buscando mi primera experiencia como analista de datos junior. Me interesa cualquier proyecto donde pueda aprender y aportar, desde una start up hasta una organización consolidada.</p>
+      <p>Prefiero trabajo remoto, aunque también puedo en modalidad presencial por la tarde o la noche.</p>
+    </div>
+  </div>
+</section>
+</main>
 
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
-
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
-
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
-
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
-
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
-
-					</section>
-				-->
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/mbbartomeo/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					</ul>
-					<ul class="copyright">
-   					 <li>&copy; Portafolio - 2025</li>
-   					 <li>Analista de Datos BI</li>
-   					 <!-- Crédito  al template -->
-   					 <li>Template: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-						</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-			<script>
-			  window.addEventListener('load', function () {
-			    AOS.init({
-			      once: true,
-			      duration: 1000,
-			      offset: 120
-			    });
-			  });
-			</script>
+<footer id="contacto">
+  <div class="wrap">
+    <span>© 2026 Micaela Bartomeo</span>
+    <span><a href="mailto:micaelabelenbartomeo@gmail.com">micaelabelenbartomeo@gmail.com</a> · <a href="https://www.linkedin.com/in/mbbartomeo/" target="_blank" rel="noopener">LinkedIn</a> · <a href="assets/BartomeoMicaela_AnalistaBI_2026.pdf">CV en PDF</a></span>
+  </div>
+</footer>
 </body>
 </html>
-
-
-	</body>
-</html>
-
